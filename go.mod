@@ -1,6 +1,6 @@
 module github.com/projectcalico/felix
 
-go 1.15
+go 1.17
 
 require (
 	github.com/Microsoft/hcsshim v0.8.9
