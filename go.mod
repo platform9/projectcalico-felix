@@ -11,6 +11,7 @@ require (
 	github.com/go-ini/ini v1.44.0
 	github.com/gogo/protobuf v1.3.2
 	github.com/golang-collections/collections v0.0.0-20130729185459-604e922904d3
+	github.com/golang-jwt/jwt/v4 v4.5.0 // indirect
 	github.com/golang/protobuf v1.4.3
 	github.com/google/gopacket v1.1.17
 	github.com/google/netstack v0.0.0-20191123085552-55fcc16cd0eb
@@ -78,3 +79,5 @@ replace (
 	k8s.io/mount-utils => k8s.io/mount-utils v0.18.12
 	k8s.io/sample-apiserver => k8s.io/sample-apiserver v0.18.12
 )
+
+replace github.com/dgrijalva/jwt-go => github.com/golang-jwt/jwt/v4 v4.4.2
