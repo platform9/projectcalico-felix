@@ -18,7 +18,7 @@
 # userspace environment as it will be deployed in calico/node.
 FROM calico/bpftool:v5.3-amd64 as bpftool
 
-FROM debian:10-slim
+FROM debian:11.6-slim
 LABEL maintainer="Shaun Crampton <shaun@tigera.io>"
 
 
