@@ -30,7 +30,7 @@ require (
 	github.com/projectcalico/pod2daemon v0.0.0-20210303175725-63bffe4262de
 	github.com/projectcalico/typha v0.7.3-0.20211122094324-72659b47ead5
 	github.com/prometheus/client_golang v1.11.1
-	github.com/satori/go.uuid v1.2.1-0.20181028125025-b2ce2384e17b
+	github.com/satori/go.uuid v1.2.0
 	github.com/sirupsen/logrus v1.6.0
 	github.com/spf13/cobra v1.1.1
 	github.com/spf13/viper v1.7.0
@@ -89,5 +89,7 @@ replace golang.org/x/crypto => golang.org/x/crypto v0.0.0-20220314234659-1baeb1c
 replace golang.org/x/text => golang.org/x/text v0.3.8
 
 replace github.com/containernetworking/cni => github.com/containernetworking/cni v0.8.1
+
+replace github.com/satori/go.uuid => github.com/google/uuid v1.3.0
 
 replace github.com/dgrijalva/jwt-go => github.com/golang-jwt/jwt/v4 v4.4.2
