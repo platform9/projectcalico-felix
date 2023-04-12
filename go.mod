@@ -90,6 +90,4 @@ replace golang.org/x/text => golang.org/x/text v0.3.8
 
 replace github.com/containernetworking/cni => github.com/containernetworking/cni v0.8.1
 
-replace github.com/satori/go.uuid => github.com/google/uuid v1.3.0
-
 replace github.com/dgrijalva/jwt-go => github.com/golang-jwt/jwt/v4 v4.4.2
