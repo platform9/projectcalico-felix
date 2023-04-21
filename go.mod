@@ -1,19 +1,18 @@
 module github.com/projectcalico/felix
 
-go 1.15
+go 1.16
 
 require (
-	github.com/Microsoft/hcsshim v0.8.9
-	github.com/aws/aws-sdk-go v1.35.7
-	github.com/containernetworking/cni v0.8.0 // indirect
+	github.com/Microsoft/hcsshim v0.8.10-0.20200715222032-5eafd1556990
+	github.com/aws/aws-sdk-go v1.35.24
 	github.com/containernetworking/plugins v0.8.2
 	github.com/davecgh/go-spew v1.1.1
 	github.com/docopt/docopt-go v0.0.0-20180111231733-ee0de3bc6815
 	github.com/go-ini/ini v1.44.0
-	github.com/gogo/protobuf v1.3.1
+	github.com/gogo/protobuf v1.3.2
 	github.com/golang-collections/collections v0.0.0-20130729185459-604e922904d3
-	github.com/golang/groupcache v0.0.0-20190702054246-869f871628b6 // indirect
-	github.com/golang/protobuf v1.4.2
+	github.com/golang-jwt/jwt/v4 v4.5.0 // indirect
+	github.com/golang/protobuf v1.4.3
 	github.com/google/gopacket v1.1.17
 	github.com/google/netstack v0.0.0-20191123085552-55fcc16cd0eb
 	github.com/ishidawataru/sctp v0.0.0-20191218070446-00ab2ac2db07
@@ -30,22 +29,18 @@ require (
 	github.com/projectcalico/libcalico-go v1.7.2-0.20211119233600-e3f7c620522a
 	github.com/projectcalico/pod2daemon v0.0.0-20210303175725-63bffe4262de
 	github.com/projectcalico/typha v0.7.3-0.20211122094324-72659b47ead5
-	github.com/prometheus/client_golang v1.0.0
+	github.com/prometheus/client_golang v1.11.1
 	github.com/satori/go.uuid v1.2.0
-	github.com/sirupsen/logrus v1.4.2
-	github.com/spf13/cobra v0.0.5
-	github.com/spf13/viper v1.6.1
-	github.com/stretchr/testify v1.5.1 // indirect
+	github.com/sirupsen/logrus v1.6.0
+	github.com/spf13/cobra v1.1.1
+	github.com/spf13/viper v1.7.0
 	github.com/vishvananda/netlink v1.1.0
-	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b
-	golang.org/x/sync v0.0.0-20200625203802-6e8e738ad208
-	golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f
-	golang.org/x/tools v0.0.0-20200502202811-ed308ab3e770 // indirect
+	golang.org/x/net v0.7.0
+	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4
+	golang.org/x/sys v0.5.0
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20200324154536-ceff61240acf
-	google.golang.org/genproto v0.0.0-20191203220235-3fa9dbf08042 // indirect
-	google.golang.org/grpc v1.27.0
+	google.golang.org/grpc v1.27.1
 	gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f // indirect
-	honnef.co/go/tools v0.0.1-2020.1.3 // indirect
 	k8s.io/api v0.19.6
 	k8s.io/apimachinery v0.19.6
 	k8s.io/client-go v0.19.6
@@ -69,6 +64,8 @@ replace (
 	k8s.io/cluster-bootstrap => k8s.io/cluster-bootstrap v0.18.12
 	k8s.io/code-generator => k8s.io/code-generator v0.18.12
 	k8s.io/component-base => k8s.io/component-base v0.18.12
+	k8s.io/component-helpers => k8s.io/component-helpers v0.18.12
+	k8s.io/controller-manager => k8s.io/controller-manager v0.18.12
 	k8s.io/cri-api => k8s.io/cri-api v0.18.12
 	k8s.io/csi-translation-lib => k8s.io/csi-translation-lib v0.18.12
 	k8s.io/kube-aggregator => k8s.io/kube-aggregator v0.18.12
@@ -79,5 +76,21 @@ replace (
 	k8s.io/kubelet => k8s.io/kubelet v0.18.12
 	k8s.io/legacy-cloud-providers => k8s.io/legacy-cloud-providers v0.18.12
 	k8s.io/metrics => k8s.io/metrics v0.18.12
+	k8s.io/mount-utils => k8s.io/mount-utils v0.18.12
 	k8s.io/sample-apiserver => k8s.io/sample-apiserver v0.18.12
 )
+
+replace github.com/gogo/protobuf => github.com/gogo/protobuf v1.3.2
+
+replace github.com/prometheus/client_golang => github.com/prometheus/client_golang v1.11.1
+
+replace golang.org/x/crypto => golang.org/x/crypto v0.0.0-20220314234659-1baeb1ce4c0b
+
+replace golang.org/x/text => golang.org/x/text v0.3.8
+
+replace github.com/containernetworking/cni => github.com/containernetworking/cni v0.8.1
+
+replace github.com/dgrijalva/jwt-go => github.com/golang-jwt/jwt/v4 v4.4.2
+replace github.com/projectcalico/libcalico-go => ../libcalico-go
+replace github.com/projectcalico/pod2daemon => ../pod2daemon
+replace github.com/projectcalico/typha => ../typha

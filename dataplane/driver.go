@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+//go:build !windows
 // +build !windows
 
 package dataplane
@@ -171,8 +172,8 @@ func StartDataplaneDriver(configParams *config.Config,
 			for _, i := range failsafeInboundHostPorts {
 				if i.Port == uint16(configParams.WireguardListeningPort) && i.Protocol == "udp" {
 					log.WithFields(log.Fields{
-						"net": i.Net,
-						"port": i.Port,
+						"net":      i.Net,
+						"port":     i.Port,
 						"protocol": i.Protocol,
 					}).Debug("FailsafeInboundHostPorts is already configured for wireguard")
 					found = true
@@ -193,8 +194,8 @@ func StartDataplaneDriver(configParams *config.Config,
 			for _, i := range failsafeOutboundHostPorts {
 				if i.Port == uint16(configParams.WireguardListeningPort) && i.Protocol == "udp" {
 					log.WithFields(log.Fields{
-						"net": i.Net,
-						"port": i.Port,
+						"net":      i.Net,
+						"port":     i.Port,
 						"protocol": i.Protocol,
 					}).Debug("FailsafeOutboundHostPorts is already configured for wireguard")
 					found = true

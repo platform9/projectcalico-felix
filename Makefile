@@ -28,7 +28,7 @@
 #
 ###############################################################################
 PACKAGE_NAME?=github.com/projectcalico/felix
-GO_BUILD_VER?=v0.49
+GO_BUILD_VER?=v0.72.1
 
 SEMAPHORE_PROJECT_ID?=$(SEMAPHORE_FELIX_PROJECT_ID)
 
@@ -66,7 +66,7 @@ $(LOCAL_BUILD_DEP):
 endif
 
 include Makefile.common
-
+DOCKER_GO_BUILD=$(DOCKER_RUN) -v $(CURDIR)/../libcalico-go:/go/src/github.com/projectcalico/libcalico-go:rw -v $(CURDIR)/../pod2daemon:/go/src/github.com/projectcalico/pod2daemon:rw -v $(CURDIR)/../typha:/go/src/github.com/projectcalico/typha:rw -e CGO_ENABLED=$(CGO_ENABLED) $(CALICO_BUILD)
 ###############################################################################
 
 BUILD_IMAGE?=calico/felix
@@ -173,7 +173,7 @@ else
 CGO_ENABLED=0
 endif
 
-DOCKER_GO_BUILD_CGO=$(DOCKER_RUN) -e CGO_ENABLED=$(CGO_ENABLED) $(CALICO_BUILD)
+DOCKER_GO_BUILD_CGO=$(DOCKER_RUN) -v $(CURDIR)/../libcalico-go:/go/src/github.com/projectcalico/libcalico-go:rw -v $(CURDIR)/../pod2daemon:/go/src/github.com/projectcalico/pod2daemon:rw -v $(CURDIR)/../typha:/go/src/github.com/projectcalico/typha:rw -e CGO_ENABLED=$(CGO_ENABLED) $(CALICO_BUILD)
 
 bin/calico-felix-$(ARCH): $(SRC_FILES) $(LOCAL_BUILD_DEP)
 	@echo Building felix for $(ARCH) on $(BUILDARCH)
